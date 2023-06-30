@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$bg-gray: #2f3740;
+$bg-black: #0d1520;
+$text-gray: #b1b5bc;
+$text-white: #fff;
+$button-purple: #8282ff;
+
+$z-index: (
+  "app": 100,
+  "icon": 120,
+  "menu": 160,
+  "select-control": 180,
+  "sticky": 500,
+);
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: $bg-gray;
+  color: $text-gray;
+  overflow: hidden;
+}
+
+a {
+  color: $button-purple;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    opacity: 0.9;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+main {
+  display: block;
+  color: $text-white;
+}

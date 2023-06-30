@@ -1,0 +1,41 @@
+@import "../../../globals.scss";
+
+.app_select__control,
+.app_select__menu {
+  background-color: theme("colors.theme-bg-black") !important;
+  border-color: theme("colors.theme-border-gray") !important;
+  color: #fff;
+
+  &.app_select__control--is-focused {
+    border-color: theme("colors.theme-border-gray") !important;
+    box-shadow: none !important;
+  }
+
+  .app_select__single-value,
+  input.app_select__input {
+    color: #fff !important;
+  }
+
+  .app_select__option {
+    &.app_select__option--is-focused {
+      background-color: #549eff !important;
+    }
+    &.app_select__option--is-selected {
+      background-color: #2684ff !important;
+    }
+  }
+}
+
+.blink-border {
+  .app_select__control {
+    border-color: #cccccc;
+    animation: blink 600ms;
+    animation-iteration-count: 2;
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: #009900;
+    }
+  }
+}

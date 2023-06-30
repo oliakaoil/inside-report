@@ -1,0 +1,90 @@
+@import "../../globals.scss";
+
+$border-gray: #e0e0e0;
+
+.select-toggle-menu {
+  height: 42px;
+
+  .select-toggle-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    padding: 4px 8px;
+    cursor: pointer;
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 100%;
+
+    .selected-wrapper {
+      flex-grow: 1;
+      overflow: hidden;
+      color: #000;
+    }
+
+    .menu-arrow {
+      vertical-align: middle;
+    }
+  }
+
+  &.disabled {
+    .select-toggle-menu-header {
+      cursor: default;
+
+      .menu-arrow,
+      .placeholder {
+        visibility: hidden;
+      }
+    }
+  }
+
+  .app-chip {
+    margin-right: 4px;
+  }
+}
+
+.select-toggle-menu-popper {
+  position: absolute;
+  z-index: map-get($z-index, "menu");
+  box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  color: #000;
+  margin-top: 4px;
+
+  .search-header {
+    padding: 16px 24px 16px;
+    border-bottom: 1px solid $border-gray;
+
+    input {
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      border: 2px solid $border-gray;
+      border-radius: 4px;
+      outline: none !important;
+      padding-left: 16px;
+      padding-right: 16px;
+      height: 40px;
+      font-size: 14px;
+    }
+  }
+
+  .options-container {
+    padding: 8px;
+    max-height: 300px;
+    overflow-y: auto;
+
+    .option-row {
+      padding: 8px 16px;
+      display: flex;
+      border-radius: 4px;
+      justify-content: flex-start;
+      align-items: center;
+
+      .toggle-switch {
+        margin-right: 8px;
+        min-width: 24px;
+      }
+    }
+  }
+}

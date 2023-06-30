@@ -1,0 +1,9 @@
+pyquery
+asyncio
+aiohttp
+pymongo
+python-decouple
+python-dateutil
+holidays
+cryptography>=3.3.2
+yfinance==0.2.9

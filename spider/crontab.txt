@@ -1,0 +1,2 @@
+# inside report spider monitoring
+*/5 * * * * /usr/local/bin/python3.9 /home/admin/inside-report/spider/monitor.py >> /tmp/spider-monitor.log 2>&1

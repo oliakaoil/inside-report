@@ -4,7 +4,7 @@ This repository contains two applications which comprise a Web platform for brow
 
 ## Background service
 
-The python web spider service pulls news filings from the [SEC Fast Edgar Archive]|https://archive.fast-edgar.com, normailizes the data, and then stores filings in MongoDB Atlas. To install and run this application:
+The python web spider service pulls public filings from the [SEC Fast Edgar Archive](https://archive.fast-edgar.com), normailizes, and then stores them as individual documents in MongoDB Atlas. To install and run the service:
 
 ```
 $ cd ./spider
@@ -13,16 +13,16 @@ $ pip3 install
 $ python3 index.py start
 ```
 
-Note above the service has dependencies on a virtual environment, python v3 or better, and makes use of the excellent [python-daemon](https://pypi.org/project/python-daemon) module to manage the service. The service can detect new filings, filter out non-form-4 filings, parse the relevant HTML for a given filing, and then validate and store filings in a MongoDB database. I originally chose [pyquuery](https://pypi.org/project/pyquery/) for HTML parsing due to my familiarity with jQuery, but I believe a faster, more stable parser choice would have been [Beautiful Soup](https://pypi.org/project/beautifulsoup4).
+Note above the service has dependencies on a virtual environment, python v3 or better, and makes use of the excellent [python-daemon](https://pypi.org/project/python-daemon) module to manage the service. The service can detect new filings, filter out non-form-4 filings, parse the relevant HTML for a given filing, and then validate and store filings in a MongoDB database. I originally chose [pyquery](https://pypi.org/project/pyquery/) for HTML parsing due to my familiarity with jQuery, but I believe a faster, more stable parser choice would have been [Beautiful Soup](https://pypi.org/project/beautifulsoup4).
 
 ## Website
 
-The website is built on the [Next.js 13 beta meta-framework](https://nextjs.org/docs) and is comprised of both a REST API and front end. The application works well with [Vercel](https://vercel.com) for hosting. To install and run this application:
+The website is built on the [Next.js 13 meta-framework](https://nextjs.org/docs) and is comprised of both a REST API and front end. The application works well with [Vercel](https://vercel.com) for hosting. To install and run this application:
 
 ```
 $ cd ./ir-webapp
-$ npm install
-$ npm run dev
+$ yarn install
+$ yarn run dev
 ```
 
 The site allows users to browse recent filings, filter and search by various criteria, and save searches in local storage for later usage.
